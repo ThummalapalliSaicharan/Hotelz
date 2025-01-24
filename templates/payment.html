@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: white; /* New blue gradient */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333; /* Darker text color for contrast */
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Card container */
+        .card {
+            background: rgba(255, 255, 255, 0.15); /* Light translucent background */
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Title and content styles */
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #66a6ff; /* Light blue title */
+        }
+
+        .card h2, .card p {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .price {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333; /* Darker text color */
+        }
+
+        /* Button styles */
+        .buy-button {
+            background: #ff6b6b; /* Soft red */
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background: #ff4757; /* Darker red on hover */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="flex justify-center mt-52">
+        <div class="card" style="height:400px;width:400px;">
+            <h2 class="title" style="font-size:28px">Payment</h2>
+            <h3 style="margin-top:50px;">BOOKING ID: {{booking_id}}</h3>
+            <h3 class="price" style="margin-top:50px;">Price: ₹{{ amount }}</h3>
+            <button style="margin-top:40px;" class="buy-button" onclick="makePayment(event, {{ amount }}, 'Educated')">Pay Now</button>
+        </div>
+    </section>
+
+    <script>
+        function makePayment(e, price, bookName) {
+            e.preventDefault();
+
+            let formData = new FormData();
+            formData.append('price', price);
+            formData.append('product_name', bookName);
+
+            async function paymentGateway() {
+                const url = '/payment/new-order'; // Your Django backend endpoint
+                const res = await fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                });
+                const jsonRes = await res.json();
+                return jsonRes;
+            }
+
+            paymentGateway().then((res) => {
+                var options = {
+                    key: res['razorpay_key'],
+                    amount: res['order']['amount'],
+                    currency: res['order']['currency'],
+                    name: res['product_name'],
+                    order_id: res['order']['id'],
+                    prefill: {
+                        email: "user@example.com", // Replace with dynamic user email if needed
+                        contact: "1234567890" // Replace with dynamic user contact if needed
+                    },
+                    callback_url: res['callback_url'],
+                };
+
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+            }).catch((error) => {
+                console.error('Payment gateway error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        }
+    </script>
+</body>
+</html>

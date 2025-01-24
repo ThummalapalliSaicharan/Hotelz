@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+       .info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            height:400px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+            color: #555;
+            line-height:35px;
+
+            font-size:20px;
+        }
+        span {
+            color: #e74c3c;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+        strong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body
+style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/static/assets2/img/8.png');
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        height: 100vh;">
+
+
+
+<div class="info">
+    <h2>Information</h2>
+  <p> <strong>*</strong> Select the type of room you want</p>
+  <p> <strong>*</strong> Select one date if you want to stay for only one night</p>
+    <p> <strong>*</strong> Breakfast will be complimentary</p>
+   <p> <strong>*</strong> Only 4 people are allowed in one room</p>
+ <p> <strong>*</strong> The checkout timing is 10:30 AM</p>
+    <a href="{% url 'roombooking'%}"><button style="width:90px;height:32px;margin-left:40%;margin-top:40px;background-color:green;border:none;color:white;border-radius:15px;">Next</button></a>
+</div>
+
+</body>
+</html>

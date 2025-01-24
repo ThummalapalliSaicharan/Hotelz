@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <style>
+        /* General page styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        /* Container styles */
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #84fab0;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .success-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8fd3f4;
+            margin-top: 20px;
+        }
+
+        /* Button styles */
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #84fab0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #8fd3f4;
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Successful</h2>
+        {% if booking_id %}
+            <p>Booking ID: {{ booking_id }}</p>
+        {% else %}
+            <p>Booking ID not found</p>
+        {% endif %}
+
+        {% if amount %}
+            <p>Amount: {{ amount }}</p>
+        {% else %}
+            <p>Amount not found</p>
+        {% endif %}
+
+        <p class="success-message">Payment Status: Successful</p>
+
+        <!-- Return Home Button -->
+        <a style="color:white" href="{% url 'home' %}" class="home-button">Return Home</a>
+    </div>
+</body>
+</html>

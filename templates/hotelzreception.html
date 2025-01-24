@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reception</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets2/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="/static/assets2/css/main.css" rel="stylesheet">
+</head>
+<body style="margin:0px;">
+<div>
+    <div style="height=40vh;background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/static/assets2/img/bg.png'); background-size: cover;
+    background-position: center;display: flex; justify-content: center; align-items: center;">
+ <h1 style="color:white;font-size:42px;color:white;margin-top:12%;margin-bottom:12%">Welcome to Hotelz Reception</h1>
+    </div>
+
+     <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>Rooms</span>
+        <h2>Rooms</h2>
+        <p>Welcome to our hotel, where comfort meets luxury — let us make your stay unforgettable!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Types of Rooms</li>
+
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <a style="text-decoration:none;" href="{% url 'roominformation' %}"><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="static/assets2/img/delux1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Delux</h4>
+                  <h4>Cost : 2199/day</h4>
+                <p>All services available</p>
+                <a href="static/assets2/img/delux1.png" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+              </div>
+            </div></a><!-- End Portfolio Item -->
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <a style="text-decoration:none;" href="{% url 'roominformation' %}">   <img src="static/assets2/img/2.png" class="img-fluid" alt=""></a>
+              <a style="text-decoration:none;" href="{% url 'roominformation' %}"> <div class="portfolio-info">
+                <h4>Superdelux</h4>
+                <h4>Cost : 2699/day</h4>
+                <p>All services available</p>
+                <a href="static/assets2/img/2.png" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+              </div></a>
+         </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <a style="text-decoration:none;" href="{% url 'roominformation' %}">  <img src="static/assets2/img/3.png" class="img-fluid" alt=""></a> <a style="text-decoration:none;" href="{% url 'roominformation' %}">  <div class="portfolio-info">
+                <h4>Suite</h4>
+                 <h4>Cost : 3199/day</h4>
+                <p>All services available</p>
+                <a href="static/assets2/img/3.png" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+
+            </div></a>
+            </div><!-- End Portfolio Item -->
+
+
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+
+
+</div>
+
+
+  <script src="/static/assets2/js/main.js"></script>
+
+<script>
+
+</script>
+
+</body>
+</html>

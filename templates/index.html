@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hotelz</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets2/img/favicon.png" rel="icon">
+  <link href="static/assets2/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets2/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets2/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets2/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="static/assets2/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/assets2/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header fixed-top">
+
+
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="static/assets2/img/logo.png" alt=""> -->
+          <h1 class="sitename">Hotelz</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Rooms</a></li>
+            <li><a href="{% url 'loginpage'%}">Login</a></li>
+            <li><a href="{% url 'register'%}">Register</a></li>
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero"  class="hero section" style="background-color:white;">
+
+      <img src="static/assets2/img/hero-bg2.png"  alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-start">
+          <div class="col-lg-8">
+            <h2>Welcome to Hotelz</h2>
+            <p>We are a team of dedicated professionals creating exceptional hotel experiences with world-class service and hospitality.</p>
+            <a href="#about" class="btn-get-started">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+<!-- About Section -->
+<section id="about" class="about section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span>About Us</span>
+    <h2>About Us</h2>
+    <p>Your comfort and luxury is our top priority. We strive to provide a seamless and enjoyable booking experience for all our guests.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+        <img style="height:550px;" src="static/assets2/img/hotel1.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+        <h3>Luxurious Stays Tailored for You</h3>
+        <p class="fst-italic">
+          We offer a variety of rooms to suit every need, ensuring that your stay is both comfortable and memorable.
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i> <span>Convenient online booking and reservation options.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Top-tier customer service available 24/7.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Exclusive amenities designed for a luxury experience tailored to every guest.</span></li>
+
+    <li><i class="bi bi-check-circle"></i> <span>Flexible check-in and check-out times to suit your schedule.</span></li>
+    <li><i class="bi bi-check-circle"></i> <span>Complimentary high-speed Wi-Fi throughout the hotel.</span></li>
+    <li><i class="bi bi-check-circle"></i> <span>Access to world-class fitness centers and recreational facilities.</span></li>
+    <li><i class="bi bi-check-circle"></i> <span>Free cancellation options for most bookings.</span></li>
+    <li><i class="bi bi-check-circle"></i> <span>Secure and seamless payment options for a hassle-free booking experience.</span></li>
+
+
+
+        </ul>
+        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section><!-- /About Section -->
+
+<!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span>Services</span>
+    <h2>Services</h2>
+    <p>Our hotel offers a wide range of services to make your stay exceptional, with every detail taken care of for you.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item  position-relative">
+          <div class="icon">
+            <i class="bi bi-activity"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>24/7 Medical Service</h3>
+          </a>
+          <p>Our team is always available to assist you with any medical needs, ensuring your well-being during your stay.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-broadcast"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>High-Speed Wifi</h3>
+          </a>
+          <p>Stay connected with our complimentary high-speed internet, available throughout the hotel for all your devices.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-easel"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Business Center</h3>
+          </a>
+          <p>Need to work while traveling? Our business center is equipped with everything you need for productivity and comfort.</p>
+        </div>
+      </div><!-- End Service Item -->
+      <!-- Additional Service Items Here -->
+    </div>
+  </div>
+</section><!-- /Services Section -->
+
+<!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action section">
+  <img src="static/assets2/img/bg.png" alt="">
+  <div class="container">
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-xl-10">
+        <div class="text-center">
+          <h3>Book Your Stay Today</h3>
+          <p>Experience luxury like never before. Book your stay now and enjoy an unforgettable experience at our hotel.</p>
+          <a class="cta-btn" href="#">Call To Action</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- /Call To Action Section -->
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span>Rooms</span>
+    <h2>Our Rooms</h2>
+    <p>Discover the perfect room for your stay, with options ranging from deluxe rooms to luxurious suites.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-app">Deluxe Rooms</li>
+        <li data-filter=".filter-product">Super Deluxe Rooms</li>
+        <li data-filter=".filter-branding">Suites</li>
+      </ul><!-- End Portfolio Filters -->
+
+    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="static/assets2/img/delux1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Delux 1</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/delux1.png" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="static/assets2/img/2.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Superdelux 1</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/2.png" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="static/assets2/img/3.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Suite 1</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/3.png" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="static/assets2/img/4.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Dilux room</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/4.png" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="static/assets2/img/5.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Superdelux 2</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/5.png" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="static/assets2/img/8.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Suite 2</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/8.png" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="static/assets2/img/6.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Delux</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/6.png" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="static/assets2/img/7.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Superdelux</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/7.png" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="static/assets2/img/9.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>suite</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="static/assets2/img/9.png" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+    </div>
+  </div>
+</section><!-- /Portfolio Section -->
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span>Pricing</span>
+    <h2>Room Rates</h2>
+    <p>Choose from a variety of room options and enjoy competitive pricing for a premium stay experience.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row g-4 g-lg-0">
+      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>Deluxe Room</h3>
+          <h4>2199<span> / day</span></h4>
+          <ul>
+            <li><i class="bi bi-check"></i> <span>Comfortable and spacious with modern amenities.</span></li>
+            <li><i class="bi bi-check"></i> <span>Free high-speed WiFi and room service.</span></li>
+            <li><i class="bi bi-check"></i> <span>Access to the fitness center and pool.</span></li>
+          </ul>
+          <div class="text-center"><a href="#" class="buy-btn">Book Now</a></div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
+        <div class="pricing-item">
+          <h3>Super Deluxe Room</h3>
+          <h4>2699<span> / day</span></h4>
+          <ul>
+            <li><i class="bi bi-check"></i> <span>Spacious with additional luxury features.</span></li>
+            <li><i class="bi bi-check"></i> <span>Complimentary breakfast included.</span></li>
+            <li><i class="bi bi-check"></i> <span>Priority room service and amenities.</span></li>
+          </ul>
+          <div class="text-center"><a href="#" class="buy-btn">Book Now</a></div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="pricing-item">
+          <h3>Suite</h3>
+          <h4>3199<span> / day</span></h4>
+          <ul>
+            <li><i class="bi bi-check"></i> <span>Luxury suite with premium furnishings and services.</span></li>
+            <li><i class="bi bi-check"></i> <span>Private balcony and lounge area.</span></li>
+            <li><i class="bi bi-check"></i> <span>Exclusive concierge service and more.</span></li>
+          </ul>
+          <div class="text-center"><a href="#" class="buy-btn">Book Now</a></div>
+        </div>
+      </div><!-- End Pricing Item -->
+    </div>
+  </div>
+</section><!-- /Pricing Section -->
+
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-about">
+            <a href="index.html" class="logo sitename">Day</a>
+            <div class="footer-contact pt-3">
+              <p>A108 Adam Street</p>
+              <p>New York, NY 535022</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>info@example.com</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets2/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets2/vendor/aos/aos.js"></script>
+  <script src="static/assets2/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets2/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets2/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="static/assets2/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="static/assets2/js/main.js"></script>
+
+</body>
+
+</html>

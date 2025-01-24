@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container input,
+        .form-container select {
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .form-container input:focus,
+        .form-container select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            padding: 12px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .form-container select {
+            appearance: none;
+            background-color: #ffffff;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23000000" d="M2 0L0 2h4L2 0zm0 5L0 3h4L2 5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px;
+        }
+
+        /* Initially hidden */
+        .opt {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="form-container">
+    <h2>Booking Form</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" value="{{ request.user.username }}" placeholder="Username" required>
+        <input type="email" name="useremail" value="{{ request.user.email }}" placeholder="Email" required>
+        <input type="text" name="phoneno" placeholder="Phone Number" required>
+        <input type="number" name="numberofrooms" placeholder="Number of Rooms" required>
+
+        <!-- Location Dropdown -->
+        <select name="location" id="location" required>
+            <option value="">Select Location</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Amaravati">Amaravati</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+        </select>
+
+        <!-- Room Dropdown (initially hidden) -->
+        <select class="opt" name="room_id" id="room_id" required>
+            <option value="">Select Room</option>
+            {% for room in rooms %}
+                <option value="{{ room.id }}" class="room-option" data-location="{{ room.location }}">
+                    {{ room.roomtype }} - ₹{{ room.price }} - Available: {{ room.available_rooms }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <input type="date" name="fromdate" placeholder="From Date" required>
+        <input type="date" name="todate" placeholder="To Date" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const locationSelect = document.getElementById('location');
+        const roomSelect = document.getElementById('room_id');
+        const roomOptions = Array.from(roomSelect.options); // Convert HTMLCollection to array
+
+        // Initially hide the room dropdown
+        roomSelect.style.display = 'none';
+
+        // Function to update room options based on selected location
+        function updateRooms() {
+            const selectedLocation = locationSelect.value;
+
+            // Show the room dropdown if a location is selected
+            if (selectedLocation) {
+                roomSelect.style.display = 'block';
+                // Clear previous options and reset
+                roomSelect.innerHTML = '<option value="">Select Room</option>';
+
+                // Filter and populate room options based on the selected location
+                roomOptions.forEach(option => {
+                    if (option.dataset.location === selectedLocation) {
+                        roomSelect.appendChild(option.cloneNode(true)); // Add matching options
+                    }
+                });
+            } else {
+                roomSelect.style.display = 'none'; // Hide dropdown if no location selected
+                roomSelect.innerHTML = '<option value="">Select Room</option>'; // Reset dropdown
+            }
+        }
+
+        // Attach event listener to the location dropdown
+        locationSelect.addEventListener('change', updateRooms);
+    });
+</script>
+
+
+</body>
+</html>

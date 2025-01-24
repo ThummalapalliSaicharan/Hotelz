@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotelz</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/assets5/css/style.css">
+    <style>
+        .btn {
+            display: block;
+            width: 60%;
+            height: 46px;
+            margin: 5px auto;
+            margin-top: 5%;
+            border-radius: 12px;
+            border: none;
+            font-size: 1.5em;
+            color:white;
+            font-size:25px;
+            background-color:white;
+            color:black;
+        }
+
+        .btn:hover {
+            background-color: skyblue;
+            color: white;
+            cursor:pointer;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            height: 100%;
+            padding: 10px;
+        }
+
+        .inner-container {
+            padding: 10px;
+            flex: 1 1 45%;
+            margin: 5px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .inner-container {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                width: 90%;
+                font-size: 1.2em;
+            }
+        }
+
+        .anchor{
+            text-decoration:none;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        #sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #343a40;
+            color: #fff;
+        }
+
+           /* Sidebar styling */
+
+
+        #sidebar .custom-menu {
+            margin-bottom: 30px;
+        }
+
+        #sidebarCollapse img {
+            height: 36px;
+            width: 38px;
+        }
+
+        #sidebar .list-unstyled {
+            padding-left: 0;
+        }
+
+        #sidebar .list-unstyled li {
+            padding: 10px 0;
+        }
+
+        #sidebar .list-unstyled li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #sidebar .list-unstyled li a:hover {
+            color: skyblue;
+        }
+
+        #sidebar .footer {
+            margin-top: auto;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .select {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 38vh;
+        }
+    </style>
+
+</head>
+<body style="margin:0;overflow:hidden;">
+<div style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/static/assets2/img/hero-bg2.png');
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        height: 115vh;">
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" style="background-color:transparent;border:none;" >
+                   <img style="height:36px;width:38px;" src="https://cdn-icons-png.flaticon.com/128/8805/8805091.png">
+                </button>
+            </div>
+            <div class="p-4">
+                <h1><a href="index.html" class="logo">Hotelz</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'feedback' %}"><span class="fa fa-user mr-3"></span>Feedback</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'mybookings' %}"><span class="fa fa-briefcase mr-3"></span>Bookings</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'changepassword' %}"><span class="fa fa-sticky-note mr-3"></span>Change Password</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}" style="color:red;"><span class="fa fa-paper-plane mr-3"></span> Logout</a></li>
+                </ul>
+
+                <div class="footer">
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div class="main-content">
+            <div class="select">
+                <h1 style="color:white;font-size:42px;">Select Your Location <img style="height:45px;" src="https://cdn-icons-png.flaticon.com/128/684/684908.png"></h1>
+            </div>
+
+            <div class="container">
+                <div class="inner-container">
+            <a class="anchor" href="{% url 'delhi' %}"> <button class="btn">Delhi</button></a>
+            <a class="anchor" href="{% url 'kolkata' %}"> <button class="btn">Kolkata</button></a>
+            <a class="anchor" href="{% url 'mumbai' %}"> <button class="btn">Mumbai</button></a>
+            <a class="anchor" href="{% url 'pune' %}"> <button class="btn">Pune</button></a>
+            <a class="anchor" href="{% url 'lucknow' %}"> <button class="btn">Lucknow</button></a>
+            <a class="anchor" href="{% url 'ahmedabad' %}"> <button class="btn">Ahmedabad</button></a>
+        </div>
+        <div class="inner-container">
+            <a class="anchor" href="{% url 'hyderabad' %}"> <button class="btn">Hyderabad</button></a>
+            <a class="anchor" href="{% url 'vijayawada' %}"> <button class="btn">Vijayawada</button></a>
+            <a class="anchor" href="{% url 'chennai' %}"> <button class="btn">Chennai</button></a>
+            <a class="anchor" href="{% url 'bangalore' %}"> <button class="btn">Bangalore</button></a>
+            <a class="anchor" href="{% url 'amaravati' %}"> <button class="btn">Amaravati</button></a>
+            <a class="anchor" href="{% url 'thiruvananthapuram' %}"> <button class="btn">Thiruvananthapuram</button></a>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/assets5/js/jquery.min.js"></script>
+<script src="/static/assets5/js/popper.js"></script>
+<script src="/static/assets5/js/bootstrap.min.js"></script>
+<script src="/static/assets5/js/main.js"></script>
+
+</body>
+</html>
